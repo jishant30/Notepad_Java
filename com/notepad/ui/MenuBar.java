@@ -26,11 +26,12 @@ public class MenuBar extends JMenuBar {
 	private EncryptionStrategy encryptionStrategy;
 
 	public MenuBar(EditorPanel editorPanel) {
+		
+		this.editorPanel = editorPanel;
+
 		this.createFileMenu();
 		this.createEditMenu();
 		this.createSettingsMenu();
-
-		this.editorPanel = editorPanel;
 
 		this.encryptionStrategy = new CeaserCipher(3);
 		this.fileHandler = new FileHandler(encryptionStrategy);
